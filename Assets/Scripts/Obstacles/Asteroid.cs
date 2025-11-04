@@ -6,13 +6,17 @@ public class Asteroid : MonoBehaviour
     private SpriteRenderer spriteRenderer;
     private Rigidbody2D rb;
     private FlashWhite flashWhite;
-
-    [SerializeField] private ObjectPooler destroyEffectPool;
+    private ObjectPooler destroyEffectPool;
 
     private int lives;
+    private int maxLives;
     private int damage;
 
     [SerializeField] private Sprite[] sprites;
+
+    void OnEnable() {
+        lives = maxLives;
+    }
 
     void Start()
     {
@@ -28,7 +32,8 @@ public class Asteroid : MonoBehaviour
         float randomScale = Random.Range(0.6f, 1f);
         transform.localScale = new Vector2(randomScale, randomScale);
 
-        lives = 5;
+        maxLives = 5;
+        lives = maxLives;
         damage = 1;
     }
     
