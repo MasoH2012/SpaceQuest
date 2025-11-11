@@ -16,6 +16,7 @@ public class Asteroid : MonoBehaviour
 
     void OnEnable() {
         lives = maxLives;
+        transform.rotation = Quaternion.identity;
     }
 
     void Start()
@@ -53,6 +54,7 @@ public class Asteroid : MonoBehaviour
             GameObject destroyEffect = destroyEffectPool.GetPooledObject();
             destroyEffect.transform.position = transform.position;
             destroyEffect.transform.rotation = transform.rotation;
+            destroyEffect.transform.localScale = transform.localScale;
             destroyEffect.SetActive(true);
             AudioManager.Instance.PlayModifiedSound(AudioManager.Instance.boom2);
             flashWhite.Reset();
