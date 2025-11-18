@@ -8747,7 +8747,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8bf848e67b60f1a4d8c0f4f3de162c24, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  moveSpeed: -0.6
+  moveSpeed: -0.4
 --- !u!1 &1492453301
 GameObject:
   m_ObjectHideFlags: 0
@@ -8961,9 +8961,29 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 401a76ec4e8abc74a83588a3b6c61e08, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  weaponLevel: 0
+  stats:
+  - speed: 5
+    damage: 1
+    size: 1
+    amount: 1
+    range: 1
+  - speed: 8
+    damage: 2
+    size: 1.4
+    amount: 2
+    range: 1
+  - speed: 11
+    damage: 3
+    size: 1.8
+    amount: 3
+    range: 1
+  - speed: 14
+    damage: 4
+    size: 2.2
+    amount: 4
+    range: 1
   bulletPool: {fileID: 1371389639}
-  speed: 12
-  damage: 1
 --- !u!224 &1641510500 stripped
 RectTransform:
   m_CorrespondingSourceObject: {fileID: 7163429371071085419, guid: debaed1f58d5a4040854cedde3939bfc, type: 3}
@@ -9535,6 +9555,10 @@ MonoBehaviour:
   health: 0
   maxHealth: 3
   engineEffect: {fileID: 1256444319}
+  experience: 0
+  currentLevel: 0
+  maxLevel: 0
+  playerLevels: 
 --- !u!95 &1806995887
 Animator:
   serializedVersion: 7
@@ -9992,7 +10016,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8bf848e67b60f1a4d8c0f4f3de162c24, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  moveSpeed: -1
+  moveSpeed: -0.6
 --- !u!1 &1962781111
 GameObject:
   m_ObjectHideFlags: 0

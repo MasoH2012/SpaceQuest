@@ -1,4 +1,5 @@
 using System.Collections;
+using System.Collections.Generic;
 using UnityEngine;
 
 public class PlayerController : MonoBehaviour
@@ -21,6 +22,11 @@ public class PlayerController : MonoBehaviour
     [SerializeField] private float maxHealth;
     private ObjectPooler destroyEffectPool;
     [SerializeField] private ParticleSystem engineEffect;
+
+    [SerializeField] private int experience;
+    [SerializeField] private int currentLevel;
+    [SerializeField] private int maxLevel;
+    [SerializeField] private List<int> playerLevels;
 
     void Awake(){
         if (Instance != null){

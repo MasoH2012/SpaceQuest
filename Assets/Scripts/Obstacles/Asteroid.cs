@@ -49,8 +49,9 @@ public class Asteroid : MonoBehaviour
     public void TakeDamage(int damage){
         AudioManager.Instance.PlayModifiedSound(AudioManager.Instance.hitRock);
         lives -= damage;
-        flashWhite.Flash();
-        if (lives <= 0){
+        if (lives > 0) {
+            flashWhite.Flash();
+        } else if (lives <= 0){
             GameObject destroyEffect = destroyEffectPool.GetPooledObject();
             destroyEffect.transform.position = transform.position;
             destroyEffect.transform.rotation = transform.rotation;

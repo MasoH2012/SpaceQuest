@@ -1,16 +1,17 @@
 using UnityEngine;
+using System.Collections.Generic;
 
-public class NewMonoBehaviourScript : MonoBehaviour
+public class Weapon : MonoBehaviour
 {
-    // Start is called once before the first execution of Update after the MonoBehaviour is created
-    void Start()
-    {
-        
-    }
+    public int weaponLevel;
+    public List<WeaponStats> stats;
 
-    // Update is called once per frame
-    void Update()
-    {
-        
+    [System.Serializable]
+    public class WeaponStats {
+        public float speed;
+        public int damage;
+        public float size;
+        public float amount;
+        public float range;
     }
 }
