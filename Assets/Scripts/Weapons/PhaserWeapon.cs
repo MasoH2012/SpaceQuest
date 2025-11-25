@@ -30,4 +30,10 @@ public class PhaserWeapon : Weapon
             bullet.SetActive(true);
         }
     }
+
+    public void LevelUp(){
+        if (weaponLevel < stats.Count - 1) {
+            weaponLevel++;
+        }
+    }
 }
