@@ -8,6 +8,7 @@ TagManager:
   - Bullet
   - Critter
   - Boss
+  - Enemy
   layers:
   - Default
   - TransparentFX
@@ -21,7 +22,7 @@ TagManager:
   - Critter
   - Bullet
   - Boss
-  - 
+  - Enemy
   - 
   - 
   - 
@@ -50,6 +51,9 @@ TagManager:
     locked: 0
   - name: Objects
     uniqueID: 2006439231
+    locked: 0
+  - name: Enemy
+    uniqueID: 94743455
     locked: 0
   - name: Player
     uniqueID: 794398291

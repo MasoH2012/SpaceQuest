@@ -114,6 +114,9 @@ public class PlayerController : MonoBehaviour
         if (collision.gameObject.CompareTag("Obstacle")){
             Asteroid asteroid = collision.gameObject.GetComponent<Asteroid>();
             if (asteroid) asteroid.TakeDamage(1, false);
+        }  else if (collision.gameObject.CompareTag("Enemy")){
+            Enemy enemy = collision.gameObject.GetComponent<Enemy>();
+            if (enemy) enemy.TakeDamage(1);
         }
     }
 

@@ -17,6 +17,11 @@ public class AudioManager : MonoBehaviour
     public AudioSource hitArmor;
     public AudioSource bossCharge;
     public AudioSource bossSpawn;
+    public AudioSource beetleHit;
+    public AudioSource beetleDestroy;
+    public AudioSource locustHit;
+    public AudioSource locustDestroy;
+    public AudioSource locustCharge;
 
     void Awake(){
         if (Instance != null){
