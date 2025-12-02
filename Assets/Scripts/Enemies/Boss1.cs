@@ -16,7 +16,6 @@ public class Boss1 : Enemy
 
     public override void OnEnable(){
         base.OnEnable();
-        lives = maxLives;
         EnterChargeState();
         AudioManager.Instance.PlaySound(AudioManager.Instance.bossSpawn);
     }
@@ -25,6 +24,8 @@ public class Boss1 : Enemy
     {
         base.Start();
         destroyEffectPool = GameObject.Find("Boom3Pool").GetComponent<ObjectPooler>();
+        hitSound = AudioManager.Instance.hitArmor;
+        destroySound = AudioManager.Instance.boom2;
     }
 
     public override void Update()
@@ -65,7 +66,7 @@ public class Boss1 : Enemy
 
     void EnterPatrolState(){
         speedX = 0;
-        speedY = Random.Range(-2f, 2f);
+        speedY = Random.Range(-1f, 1f);
         switchInterval = Random.Range(5f, 10f);
         switchTimer = switchInterval;
         charging = false;
@@ -74,7 +75,7 @@ public class Boss1 : Enemy
 
     void EnterChargeState(){
         if (!charging) AudioManager.Instance.PlaySound(AudioManager.Instance.bossCharge);
-        speedX = -10f;
+        speedX = -5f;
         speedY = 0;
         switchInterval = Random.Range(0.6f, 1.3f);
         switchTimer = switchInterval;
@@ -82,14 +83,12 @@ public class Boss1 : Enemy
         animator.SetBool("charging", true);
     }
 
-    private void OnCollisionEnter2D(Collision2D collision)
+    public override void OnCollisionEnter2D(Collision2D collision)
     {
+        base.OnCollisionEnter2D(collision);
         if (collision.gameObject.CompareTag("Obstacle")){
             Asteroid asteroid = collision.gameObject.GetComponent<Asteroid>();
             if (asteroid) asteroid.TakeDamage(damage, true);
-        } else if (collision.gameObject.CompareTag("Player")){
-            PlayerController player = collision.gameObject.GetComponent<PlayerController>();
-            if (player) player.TakeDamage(damage);
         }
     }
 }

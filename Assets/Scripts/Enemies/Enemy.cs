@@ -35,7 +35,7 @@ public class Enemy : MonoBehaviour
         transform.position += new Vector3(speedX * Time.deltaTime, speedY * Time.deltaTime);
     }
 
-    private void OnCollisionEnter2D(Collision2D collision) {
+    public virtual void OnCollisionEnter2D(Collision2D collision) {
         if (collision.gameObject.CompareTag("Player")){
             PlayerController player = collision.gameObject.GetComponent<PlayerController>();
             if (player) player.TakeDamage(damage);

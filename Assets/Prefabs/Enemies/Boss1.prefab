@@ -14,6 +14,7 @@ GameObject:
   - component: {fileID: 4908997395428747105}
   - component: {fileID: 4040689587523523518}
   - component: {fileID: 3569981097408583067}
+  - component: {fileID: 7651480016271614484}
   m_Layer: 11
   m_Name: Boss1
   m_TagString: Boss
@@ -103,6 +104,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d9f0b8200ba742e40b344d1410c4a6d9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  lives: 0
+  maxLives: 100
+  damage: 20
+  experienceToGive: 20
 --- !u!95 &4908997395428747105
 Animator:
   serializedVersion: 7
@@ -188,3 +193,15 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 4
+--- !u!114 &7651480016271614484
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8982552586886012180}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2f9acc78f09acf146afad5906b762c85, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
